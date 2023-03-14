@@ -1,6 +1,6 @@
-package com.example.carselling201080.config;
+package com.example.sellingPlatform.config;
 
-import com.example.carselling201080.service.UserService;
+import com.example.sellingPlatform.service.UserService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,13 +25,13 @@ public class CustomEmailAndPasswordAuthenticator implements AuthenticationProvid
         String password = authentication.getCredentials().toString();
 
         if(email.isEmpty() || password.isEmpty()){
-            throw new IllegalArgumentException();
+            return null;
         }
 
         UserDetails userDetails = userService.loadUserByUsername(email);
 
         if(!passwordEncoder.matches(password, userDetails.getPassword())){
-            throw new IllegalArgumentException();
+            return null;
         }
 
         return new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());

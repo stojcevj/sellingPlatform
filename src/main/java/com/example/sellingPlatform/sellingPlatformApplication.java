@@ -1,4 +1,4 @@
-package com.example.carselling201080;
+package com.example.sellingPlatform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class CarSelling201080Application {
+public class sellingPlatformApplication {
 
     @Bean
     PasswordEncoder passwordEncoder(){
@@ -15,7 +15,7 @@ public class CarSelling201080Application {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(CarSelling201080Application.class, args);
+        SpringApplication.run(sellingPlatformApplication.class, args);
     }
 
 }

@@ -1,11 +1,10 @@
-package com.example.carselling201080.model;
+package com.example.sellingPlatform.model;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -13,37 +12,24 @@ import java.util.Collections;
 @Entity
 @Table(name = "userLogin")
 public class User implements UserDetails {
-    public User(String userFirstName, String userSecondName, LocalDate userBirthDay, String userPhoneNumber, String userEmail, String userName, String userPassword, UserAuthorities userAuthorities) {
-        this.userFirstName = userFirstName;
-        this.userSecondName = userSecondName;
-        this.userBirthDay = userBirthDay;
-        this.userPhoneNumber = userPhoneNumber;
-        this.userEmail = userEmail;
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.userAuthorities = userAuthorities;
+    public User(String Name, String Email, String Password, UserAuthorities Authorities) {
+        this.userName = Name;
+        this.userEmail = Email;
+        this.userPassword = Password;
+        this.userAuthorities = Authorities;
     }
 
     public User(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    private Long userID;
-
-    private String userFirstName;
-
-    private String userSecondName;
-
-    private LocalDate userBirthDay;
-
-    private String userPhoneNumber;
-
-    private String userEmail;
+    private Long Id;
 
     private String userName;
 
-    private String userPassword;
+    private String userEmail;
 
+    private String userPassword;
     @Enumerated(value = EnumType.STRING)
     private UserAuthorities userAuthorities;
 
@@ -55,7 +41,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(userAuthorities);
+        return Collections.singleton(getUserAuthorities());
     }
 
     @Override

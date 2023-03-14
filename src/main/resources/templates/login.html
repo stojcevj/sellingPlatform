@@ -1,18 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Login</title>
-        <meta lang="en">
-    </head>
-    <body>
+<div class="row mx-3 px-3 py-3 rounded text-dark bg-white" xmlns:th="http://www.thymeleaf.org" style="margin-top:10%">
+    <div class="col-md-6 col-sm-12">
         <form th:action="@{'/login'}" th:method="POST">
-            <div>
-                <input type="text" name="username" id="username">
+            <div class="mb-3">
+                <label for="email" class="form-label">Емаил адреса</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="username" required>
+                <div id="emailHelp" class="form-text">Никогаш нема да ја споделиме вашата Емаил адреса со никого.</div>
             </div>
-            <div>
-                <input type="password" name="password" id="password">
+            <div class="mb-3">
+                <label for="password" class="form-label">Лозинка</label>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <input type="submit" value="Submit" name="submit">
+            <button type="submit" class="btn btn-primary">Логирај Ме</button>
         </form>
-    </body>
-</html>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <form th:action="@{'/register'}" th:method="POST">
+            <div class="mb-3">
+                <label for="registerName" class="form-label">Име</label>
+                <input type="text" class="form-control" id="registerName" name="registerName" required>
+            </div>
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Емаил адреса</label>
+                <input type="email" class="form-control" id="registerEmail" name="registerEmail" required>
+            </div>
+            <div class="mb-3">
+                <label for="registerPassword" class="form-label">Лозинка</label>
+                <input type="password" class="form-control" id="registerPassword" name="registerPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Регистрирај ме</button>
+        </form>
+    </div>
+</div>
+

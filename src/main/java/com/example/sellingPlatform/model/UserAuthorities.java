@@ -1,4 +1,4 @@
-package com.example.carselling201080.model;
+package com.example.sellingPlatform.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

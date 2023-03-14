@@ -1,4 +1,4 @@
-package com.example.carselling201080.exceptions;
+package com.example.sellingPlatform.exceptions;
 
 public class UserUsernameNotFoundException extends RuntimeException{
     public UserUsernameNotFoundException(String Username) {
