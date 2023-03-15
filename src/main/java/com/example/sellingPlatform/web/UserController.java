@@ -1,6 +1,6 @@
 package com.example.sellingPlatform.web;
 
-import com.example.sellingPlatform.model.UserAuthorities;
+import com.example.sellingPlatform.model.enumerations.UserAuthorities;
 import com.example.sellingPlatform.service.ProductService;
 import com.example.sellingPlatform.service.UserService;
 import org.springframework.stereotype.Controller;

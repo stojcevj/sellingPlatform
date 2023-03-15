@@ -1,7 +1,7 @@
 package com.example.sellingPlatform.service;
 
 import com.example.sellingPlatform.model.User;
-import com.example.sellingPlatform.model.UserAuthorities;
+import com.example.sellingPlatform.model.enumerations.UserAuthorities;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;

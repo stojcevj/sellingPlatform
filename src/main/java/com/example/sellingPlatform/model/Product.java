@@ -1,11 +1,10 @@
 package com.example.sellingPlatform.model;
 
+import com.example.sellingPlatform.model.enumerations.Brand;
+import com.example.sellingPlatform.model.enumerations.Category;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -13,13 +12,25 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+
     private String name;
-    private String price;
+
+    private String buyPrice;
+
+    private String sellPrice;
+
     private String imageUrl;
 
-    public Product(String name, String price, String imageUrl) {
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
+
+    @Enumerated(value = EnumType.STRING)
+    private Brand brand;
+
+    public Product(String name, String buyPrice, String sellPrice, String imageUrl) {
         this.name = name;
-        this.price = price;
+        this.buyPrice = buyPrice;
+        this.sellPrice = sellPrice;
         this.imageUrl = imageUrl;
     }
 

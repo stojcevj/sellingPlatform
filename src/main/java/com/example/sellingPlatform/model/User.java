@@ -1,5 +1,6 @@
 package com.example.sellingPlatform.model;
 
+import com.example.sellingPlatform.model.enumerations.UserAuthorities;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +13,7 @@ import java.util.Collections;
 @Entity
 @Table(name = "userLogin")
 public class User implements UserDetails {
+
     public User(String Name, String Email, String Password, UserAuthorities Authorities) {
         this.userName = Name;
         this.userEmail = Email;
@@ -30,6 +32,7 @@ public class User implements UserDetails {
     private String userEmail;
 
     private String userPassword;
+
     @Enumerated(value = EnumType.STRING)
     private UserAuthorities userAuthorities;
 

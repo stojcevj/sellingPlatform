@@ -3,7 +3,7 @@ package com.example.sellingPlatform.service.impl;
 import com.example.sellingPlatform.exceptions.UserIdNotFoundException;
 import com.example.sellingPlatform.exceptions.UserUserEmailNotFoundException;
 import com.example.sellingPlatform.model.User;
-import com.example.sellingPlatform.model.UserAuthorities;
+import com.example.sellingPlatform.model.enumerations.UserAuthorities;
 import com.example.sellingPlatform.repository.UserRepository;
 import com.example.sellingPlatform.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;

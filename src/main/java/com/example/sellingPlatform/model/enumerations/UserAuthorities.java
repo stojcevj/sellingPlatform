@@ -1,4 +1,4 @@
-package com.example.sellingPlatform.model;
+package com.example.sellingPlatform.model.enumerations;
 
 import org.springframework.security.core.GrantedAuthority;
 
